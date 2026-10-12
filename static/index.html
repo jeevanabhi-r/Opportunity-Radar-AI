@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>Opportunity Radar AI</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="/"><span class="brand-icon">⌁</span><span>Opportunity <b>Radar AI</b></span></a>
+      <span class="live"><i></i> LIVE WEB DISCOVERY</span>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="eyebrow">STUDENT OPPORTUNITY INTELLIGENCE</div>
+        <h1>Find your next <span>big opportunity.</span></h1>
+        <p>Search the live web for hackathons, internships, scholarships, and early-career roles. Get an AI brief with source links—not made-up answers.</p>
+      </section>
+
+      <section class="search-panel">
+        <div class="panel-head"><div><span class="step">01</span><h2>Build your search</h2></div><span class="muted">Powered by SerpApi + Groq</span></div>
+        <form id="search-form">
+          <label>What are you interested in?
+            <input id="topic" maxlength="120" value="AI agents and cybersecurity" required placeholder="e.g. AI, cybersecurity, Python">
+          </label>
+          <div class="form-grid">
+            <label>Opportunity type
+              <select id="type">
+                <option>Hackathons</option><option>Internships</option><option>Scholarships</option><option>Jobs</option><option>All opportunities</option>
+              </select>
+            </label>
+            <label>Location
+              <input id="location" maxlength="80" value="India" required>
+            </label>
+            <label>Study level
+              <select id="level"><option>Undergraduate</option><option>First year</option><option>Second year</option><option>Third year</option><option>Final year</option><option>Graduate</option><option>Any</option></select>
+            </label>
+          </div>
+          <button id="submit-btn" type="submit"><span>⌕</span> Discover opportunities <b>→</b></button>
+          <p class="privacy-note">Your API keys stay on the server. Search results are leads; confirm details on official websites.</p>
+        </form>
+      </section>
+
+      <section id="output" class="output hidden">
+        <div class="results-heading"><div><span class="step">02</span><h2>Radar report</h2></div><span id="result-count" class="count"></span></div>
+        <div id="summary-card" class="summary-card">
+          <div class="summary-label">✦ AI RESEARCH BRIEF</div><div id="summary" class="summary-text"></div>
+        </div>
+        <div class="results-heading results-subhead"><div><span class="step">03</span><h2>Search evidence</h2></div><span class="muted">Open sources to verify</span></div>
+        <div id="results-list" class="results-list"></div>
+      </section>
+      <div id="error" class="error hidden"></div>
+      <footer><span>Opportunity Radar AI</span><span>Built with live search data · 2026</span></footer>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
